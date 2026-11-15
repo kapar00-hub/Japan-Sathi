@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japan Sathi – जापान साथी</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f7f9;--card:#fff;--tx:#1b1f24;--mut:#68707a;--bd:#e2e5ea;--ac:#c8102e;--ok:#1a7f4b;--wa:#b7791f;--er:#c0262d;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121417;--card:#1c2025;--tx:#eceef1;--mut:#9aa3ad;--bd:#2c323a;--ac:#ff5a70;--ok:#4cc38a;--wa:#e5b34d;--er:#ff7b80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121417;--card:#1c2025;--tx:#eceef1;--mut:#9aa3ad;--bd:#2c323a;--ac:#ff5a70;--ok:#4cc38a;--wa:#e5b34d;--er:#ff7b80;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP","Noto Sans Devanagari",sans-serif;padding-top:64px}
+header{padding:18px 16px 20px;max-width:640px;margin:0 auto;background:linear-gradient(135deg,var(--ac),#ff8a5b);color:#fff;border-radius:0 0 24px 24px}
+h1{font-size:20px;margin:0}
+header p{margin:2px 0 0;color:rgba(255,255,255,.88);font-size:13px}
+main{max-width:640px;margin:auto;padding:8px 16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+h2{font-size:16px;margin:0 0 10px}
+label{display:block;font-size:12px;color:var(--mut);margin:8px 0 3px}
+input,select{width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:10px 16px;margin-top:12px;width:100%;font-weight:600}
+.del{background:none;border:0;color:var(--mut);font-size:18px;padding:4px 8px}
+.row{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:10px 0;border-top:1px solid var(--bd)}
+.row:first-of-type{border-top:0}
+.row small{color:var(--mut);display:block}
+.badge{font-weight:700;border-radius:20px;padding:3px 10px;font-size:13px;white-space:nowrap;border:1px solid currentColor}
+.ok{color:var(--ok)}.wa{color:var(--wa)}.er{color:var(--er)}
+.alert{border-left:4px solid var(--er);padding:8px 12px;margin:8px 0;background:var(--bg);border-radius:8px;font-size:14px}
+.alert.wa{border-color:var(--wa);color:var(--tx)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.total{font-size:28px;font-weight:700}
+.bar{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:13px}
+.bar span:first-child{width:84px;color:var(--mut)}
+.bar i{display:block;height:12px;border-radius:6px;background:var(--ac)}
+.bar .tr{flex:1;background:var(--bd);border-radius:6px}
+.bar span:last-child{width:70px;text-align:right}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin:8px 0}
+.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:20px;padding:6px 12px;white-space:nowrap;font-size:14px}
+.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.ph{padding:12px 0;border-top:1px solid var(--bd)}
+.ph:first-child{border-top:0}
+.ph .en{font-size:12px;color:var(--mut)}
+.ph .ne{font-size:17px}
+.ph .jp{font-size:18px;font-weight:600}
+.ph .ro{font-size:13px;color:var(--mut)}
+nav{position:fixed;left:0;right:0;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--bd);display:flex;padding-top:env(safe-area-inset-top,0px)}
+nav button{flex:1;background:none;border:0;color:var(--mut);padding:10px 4px;font-size:12px}
+nav button b{display:block;font-size:20px;font-weight:400}
+nav button.on{color:var(--ac);font-weight:700;box-shadow:inset 0 -3px 0 var(--ac)}
+.empty{color:var(--mut);font-size:14px;padding:6px 0}
+textarea{width:100%;min-height:90px;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:13px monospace}
+.sos{font-size:22px;font-weight:700;color:var(--er)}
+.btn2{background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:9px 14px;margin:8px 8px 0 0}
+.kc{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--bd)}
+.kb{font-size:44px;line-height:1;min-width:64px;text-align:center;font-weight:600}
+nav{overflow-x:auto}nav button{min-width:60px}
+.lv{font-size:11px;font-weight:700;color:#fff;border-radius:8px;padding:2px 8px}
+.lvN5{background:#2da44e}.lvN4{background:#1f8ac0}.lvN3{background:#8250df}.lvN2{background:#d97706}.lvN1{background:#c8102e}
+.wc{padding:12px;border-radius:14px;background:var(--bg);margin:8px 0}
+.wh{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.ww{font-size:22px}
+.ex{margin-top:6px;font-size:15px}
+.ck{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--tx);margin:8px 0}
+.ck input{width:auto}
+#n-kan,#n-wrd{display:none}
+.hide{display:none}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<header><h1>Japan Sathi ・ जापान साथी</h1><p>Visa ・ Kharcha ・ Bhasa (ビザ・家計・ことば)</p></header>
+<main>
+<section id="t-day">
+  <div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Aaja ko lakshya ・ 今日の目標</h2><span class="badge ok" id="dstreak"></span></div><div id="dcheck"></div></div>
+  <div class="card"><h2>⭐ Aaja ko 5 important shabda ・ 今日の単語</h2><div id="dwords"></div></div>
+  <div class="card"><h2>漢 Aajako kanji</h2><div id="dkan"></div></div>
+  <div class="card"><h2>💬 Aajako phrase</h2><div id="dph"></div></div>
+</section>
+<section id="t-wrd" class="hide"><div class="chips sub"></div>
+  <div class="card">
+    <p class="empty">N5 dekhi N1 samma, lesson anusar. Level (N3-N1) haru anumaanit chhan, official JLPT list sanga pura milna sakdaina.</p>
+    <input id="wq" placeholder="Khojnus ・ 検索" oninput="renderWords()">
+    <div class="chips" id="wlv"></div><div class="chips" id="wls"></div>
+    <div id="wlist"></div>
+  </div>
+</section>
+<section id="t-visa" class="hide">
+  <div id="alerts"></div>
+  <div class="card"><h2>Nayaa miti thapnus ・ 期限を追加</h2>
+    <label>कुन मिति हो? ・ 名前</label>
+    <select id="dpre" onchange="presetPick()">
+      <option value="在留期限 (Visa expiry)">在留期限 – Visa expiry</option>
+      <option value="在留カード (Residence card)">在留カード – Residence card</option>
+      <option value="パスポート (Passport)">パスポート – Passport</option>
+      <option value="国民健康保険 (Health insurance)">国民健康保険 – Health insurance</option>
+      <option value="住民税 (Resident tax)">住民税 – Resident tax</option>
+      <option value="学校の学費 (School fee)">学校の学費 – School fee</option>
+      <option value="other">Aru ・ その他</option>
+    </select>
+    <input id="dname" class="hide" placeholder="Naam lekhnus ・ 名前">
+    <label>Antim miti ・ 日付</label>
+    <input id="ddate" type="date">
+    <button class="btn" onclick="addDeadline()">Thapnus ・ 追加</button>
+  </div>
+  <div class="card"><h2>Mero miti haru ・ 期限一覧</h2><div id="dlist"></div></div>
+  <p class="empty">Warning: 90, 30, 7 din agadi. App kholda dekhinchha.</p>
+</section>
+
+<section id="t-money" class="hide">
+  <div class="card"><h2>Yo mahina ・ 今月</h2>
+    <div class="total" id="mtotal">¥0</div>
+    <label>Mahina ko budget (¥) ・ 月の予算</label>
+    <input id="bud" type="number" inputmode="numeric" placeholder="80000" onchange="setBudget()">
+    <div id="bmsg"></div>
+    <div id="mbars"></div>
+  </div>
+  <div class="card"><h2>Kharcha thapnus ・ 支出を追加</h2>
+    <div class="two"><div><label>Rakam (¥)</label><input id="eamt" type="number" inputmode="numeric" min="0" placeholder="1200"></div>
+    <div><label>Miti ・ 日付</label><input id="edate" type="date"></div></div>
+    <label>Prakar ・ 種類</label>
+    <select id="ecat">
+      <option>Ghar bhada ・ 家賃</option><option>Khana ・ 食費</option><option>Yatayat ・ 交通</option>
+      <option>Phone ・ 通信</option><option>Padhai ・ 学費</option><option>Nepal pathaune ・ 送金</option><option>Aru ・ その他</option>
+    </select>
+    <button class="btn" onclick="addExpense()">Thapnus ・ 追加</button>
+  </div>
+  <div class="card"><h2>Hal ko kharcha ・ 最近</h2><div id="elist"></div></div>
+</section>
+
+<section id="t-phr" class="hide"><div class="chips sub"></div>
+  <div class="card">
+    <input id="q" placeholder="Khojnus ・ 検索 (Nepali / English / 日本語)" oninput="renderPhrases()">
+    <div class="chips" id="chips"></div>
+    <div id="plist"></div>
+  </div>
+</section>
+<section id="t-kan" class="hide"><div class="chips sub"></div>
+  <div class="card">
+    <p class="empty">On (オン) = chini bata aayeko awaaj. Kun (くん) = Japan ko afnai awaaj. Pahile example word yaad garnus, kanji afai sajilo hunchha.</p>
+    <input id="kq" placeholder="Khojnus ・ 検索 (漢字 / Nepali / English)" oninput="renderKanji()">
+    <div class="chips" id="kchips"></div>
+    <div id="klist"></div>
+  </div>
+</section>
+<section id="t-more" class="hide">
+  <div class="card"><h2>Jaruri number ・ 緊急連絡先</h2>
+    <div class="row"><div>Police ・ 警察<small>Chor, durghatana</small></div><div class="sos">110</div></div>
+    <div class="row"><div>Ambulance / Aago ・ 救急・消防<small>Bimar, aago lagda</small></div><div class="sos">119</div></div>
+    <div class="row"><div>Samudri suraksha ・ 海上保安<small>Samundra ma</small></div><div class="sos">118</div></div>
+    <div class="row"><div>Immigration info center ・ 外国人在留総合インフォメーションセンター<small>0570-013904 (official site मा पनि check गर्नुहोस्)</small></div></div>
+  </div>
+  <div class="card"><h2>Yen ↔ Nepali rupaiya ・ 換算</h2>
+    <label>1 yen = kati NPR? (aajako rate afai halnus)</label>
+    <input id="rate" type="number" step="0.01" inputmode="decimal" oninput="conv('j')">
+    <div class="two"><div><label>Yen (¥)</label><input id="cj" type="number" inputmode="decimal" oninput="conv('j')"></div>
+    <div><label>NPR (रु)</label><input id="cn" type="number" inputmode="decimal" oninput="conv('n')"></div></div>
+  </div>
+  <div class="card"><h2>Notification ・ 通知</h2>
+    <p class="empty">App kholda 7 din bhitra ko miti ko notification aaunchha (browser le milaye).</p>
+    <button class="btn2" onclick="notifOn()">Notification on ・ 通知をオン</button>
+  </div>
+  <div class="card"><h2>Backup ・ バックアップ</h2>
+    <p class="empty">Naya phone ma data lijana: Export thichnus, text copy garera naya phone ma Import garnus.</p>
+    <textarea id="bk" placeholder="Yaha data aaunchha / yaha paste garnus"></textarea>
+    <button class="btn2" onclick="exportData()">Export</button><button class="btn2" onclick="importData()">Import</button><button class="btn2" onclick="copyData()">Copy</button>
+  </div>
+</section>
+</main>
+<nav>
+  <button id="n-day" class="on" onclick="tab('day')"><b>⭐</b>Daily</button>
+  <button id="n-visa" onclick="tab('visa')"><b>📅</b>Visa</button>
+  <button id="n-money" onclick="tab('money')"><b>💴</b>Kharcha</button>
+  <button id="n-phr" onclick="tab('phr')"><b>💬</b>Bhasa</button>
+  <button id="n-kan" onclick="tab('kan')"><b>漢</b>Kanji</button>
+  <button id="n-wrd" onclick="tab('wrd')"><b>📚</b>Shabda</button>
+  <button id="n-more" onclick="tab('more')"><b>🧰</b>Aru</button>
+</nav>
+
+<script>
+var mem={};
+function load(k,d){try{var v=localStorage.getItem(k);if(v)return JSON.parse(v)}catch(e){}return mem[k]||d}
+function save(k,v){mem[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function $(i){return document.getElementById(i)}
+function today(){var d=new Date();d.setHours(0,0,0,0);return d}
+function iso(d){var m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+"-"+(m<10?"0":"")+m+"-"+(x<10?"0":"")+x}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+
+var deadlines=load("js_deadlines",[]), expenses=load("js_expenses",[]), cat="all";
+
+function tab(t){["day","visa","money","phr","kan","wrd","more"].forEach(function(x){$("t-"+x).classList.toggle("hide",x!==t);$("n-"+x).classList.toggle("on",x===t)});if(t==="kan"||t==="wrd")$("n-phr").classList.add("on")}
+function presetPick(){$("dname").classList.toggle("hide",$("dpre").value!=="other")}
+
+function daysLeft(s){var p=s.split("-"),d=new Date(+p[0],+p[1]-1,+p[2]);return Math.round((d-today())/864e5)}
+function addDeadline(){
+  var n=$("dpre").value==="other"?$("dname").value.trim():$("dpre").value, d=$("ddate").value;
+  if(!n||!d){alert("Naam ra miti dubai chahinchha / 名前と日付を入力してください");return}
+  deadlines.push({id:uid(),name:n,date:d});save("js_deadlines",deadlines);$("ddate").value="";$("dname").value="";renderDeadlines()
+}
+function delDeadline(id){deadlines=deadlines.filter(function(x){return x.id!==id});save("js_deadlines",deadlines);renderDeadlines()}
+function renderDeadlines(){
+  var l=deadlines.slice().sort(function(a,b){return a.date<b.date?-1:1}),h="",al="";
+  l.forEach(function(x){
+    var n=daysLeft(x.date),cls=n<0||n<=7?"er":n<=30?"wa":n<=90?"wa":"ok",t=n<0?Math.abs(n)+" din bityo ・ 期限切れ":n===0?"Aaja! ・ 今日":n+" din baki ・ あと"+n+"日";
+    h+='<div class="row"><div>'+esc(x.name)+'<small>'+esc(x.date)+'</small></div><div><span class="badge '+cls+'">'+t+'</span><button class="del" onclick="delDeadline(\''+x.id+'\')" aria-label="delete">✕</button></div></div>';
+    if(n<=90){var lv=n<0?"er":n<=7?"er":n<=30?"wa":"wa";
+      al+='<div class="alert '+(lv==="er"?"":"wa")+'"><b>'+esc(x.name)+'</b>: '+(n<0?"Miti bitisakyo! Turuntai sodhnus ・ 期限が過ぎています":n<=7?"7 din bhitra! Aba nai tayari garnus ・ 7日以内":n<=30?"30 din bhitra. Kagaj tayar garnus ・ 30日以内":"90 din bhitra. Suru garnus ・ 90日以内")+'</div>'}
+  });
+  $("dlist").innerHTML=h||'<div class="empty">Kehi chhaina. Mathi thapnus. ・ まだありません</div>';
+  $("alerts").innerHTML=al;
+}
+
+function yen(n){return "¥"+Math.round(n).toLocaleString("en-US")}
+function addExpense(){
+  var a=parseFloat($("eamt").value),d=$("edate").value||iso(today());
+  if(!(a>0)){alert("Rakam lekhnus / 金額を入力してください");return}
+  expenses.push({id:uid(),amt:a,date:d,cat:$("ecat").value});save("js_expenses",expenses);$("eamt").value="";renderExpenses()
+}
+function delExpense(id){expenses=expenses.filter(function(x){return x.id!==id});save("js_expenses",expenses);renderExpenses()}
+function renderExpenses(){
+  var m=iso(today()).slice(0,7),sum=0,by={};
+  expenses.forEach(function(x){if(x.date.slice(0,7)===m){sum+=x.amt;by[x.cat]=(by[x.cat]||0)+x.amt}});
+  $("mtotal").textContent=yen(sum);budgetUI(sum);
+  var mx=Math.max.apply(null,Object.keys(by).map(function(k){return by[k]}).concat([1])),b="";
+  Object.keys(by).sort(function(a,c){return by[c]-by[a]}).forEach(function(k){
+    b+='<div class="bar"><span>'+esc(k.split(" ・ ")[0])+'</span><span class="tr"><i style="width:'+Math.round(by[k]/mx*100)+'%"></i></span><span>'+yen(by[k])+'</span></div>'});
+  $("mbars").innerHTML=b||'<div class="empty">Yo mahina kehi chhaina ・ データなし</div>';
+  var l=expenses.slice().sort(function(a,c){return a.date<c.date?1:-1}).slice(0,15),h="";
+  l.forEach(function(x){h+='<div class="row"><div>'+esc(x.cat.split(" ・ ")[0])+'<small>'+esc(x.date)+'</small></div><div><b>'+yen(x.amt)+'</b><button class="del" onclick="delExpense(\''+x.id+'\')" aria-label="delete">✕</button></div></div>'});
+  $("elist").innerHTML=h||'<div class="empty">Kehi chhaina ・ まだありません</div>';
+}
+
+var P=[
+["Aspatal ・ 病院","I have a fever.","मलाई ज्वरो आएको छ।","熱があります。","netsu ga arimasu"],
+["Aspatal ・ 病院","My stomach hurts.","मेरो पेट दुख्यो।","お腹が痛いです。","onaka ga itai desu"],
+["Aspatal ・ 病院","I need a doctor.","मलाई डाक्टर चाहियो।","医者に診てもらいたいです。","isha ni mite moraitai desu"],
+["Aspatal ・ 病院","I have no health insurance card with me.","मसँग बीमा कार्ड छैन।","保険証を持っていません。","hokenshō o motte imasen"],
+["Yakusho ・ 役所","I want to renew my visa.","म भिसा थप्न चाहन्छु।","在留期間を更新したいです。","zairyū kikan o kōshin shitai desu"],
+["Yakusho ・ 役所","Where is the counter?","काउन्टर कहाँ छ?","窓口はどこですか。","madoguchi wa doko desu ka"],
+["Yakusho ・ 役所","Please speak slowly.","कृपया बिस्तारै बोल्नुहोस्।","ゆっくり話してください。","yukkuri hanashite kudasai"],
+["Yakusho ・ 役所","I do not understand.","मैले बुझिनँ।","わかりません。","wakarimasen"],
+["Pasal ・ 買い物","How much is this?","यो कति हो?","これはいくらですか。","kore wa ikura desu ka"],
+["Pasal ・ 買い物","Please give me a receipt.","रसिद दिनुहोस्।","レシートをください。","reshīto o kudasai"],
+["Pasal ・ 買い物","Is there a discount?","छुट छ?","割引はありますか。","waribiki wa arimasu ka"],
+["Kaam ・ 仕事","Sorry I am late.","ढिलो भएकोमा माफ गर्नुहोस्।","遅れてすみません。","okurete sumimasen"],
+["Kaam ・ 仕事","Please teach me.","मलाई सिकाउनुहोस्।","教えてください。","oshiete kudasai"],
+["Kaam ・ 仕事","I want to take a day off.","म एक दिन बिदा लिन चाहन्छु।","休みをいただきたいです。","yasumi o itadakitai desu"],
+["Kaam ・ 仕事","Thank you for your hard work.","तपाईंको मेहनतको लागि धन्यवाद।","お疲れ様です。","otsukaresama desu"],
+["Jaruri ・ 緊急","Please help me!","मलाई मद्दत गर्नुहोस्!","助けてください！","tasukete kudasai"],
+["Jaruri ・ 緊急","Please call an ambulance.","एम्बुलेन्स बोलाउनुहोस्।","救急車を呼んでください。","kyūkyūsha o yonde kudasai"],
+["Jaruri ・ 緊急","I lost my residence card.","मेरो रेसिडेन्स कार्ड हरायो।","在留カードをなくしました。","zairyū kādo o nakushimashita"],
+["Samanya ・ 日常","Thank you.","धन्यवाद।","ありがとうございます。","arigatō gozaimasu"],
+["Samanya ・ 日常","Excuse me / I am sorry.","माफ गर्नुहोस्।","すみません。","sumimasen"],
+["Station ・ 駅","Where is the nearest station?","नजिकको स्टेशन कहाँ छ?","一番近い駅はどこですか。","ichiban chikai eki wa doko desu ka"],
+["Station ・ 駅","Which platform for Tokyo?","टोकियोको लागि कुन प्लेटफर्म हो?","東京行きは何番線ですか。","Tōkyō-yuki wa nan-ban-sen desu ka"],
+["Station ・ 駅","One ticket, please.","एउटा टिकट दिनुहोस्।","切符を一枚ください。","kippu o ichimai kudasai"],
+["Bank ・ 銀行","I want to open a bank account.","म बैंक खाता खोल्न चाहन्छु।","口座を開きたいです。","kōza o hirakitai desu"],
+["Bank ・ 銀行","I want to send money to Nepal.","म नेपाल पैसा पठाउन चाहन्छु।","ネパールに送金したいです。","Nepāru ni sōkin shitai desu"],
+["Ghar ・ 住まい","The air conditioner is broken.","एयर कन्डिसनर बिग्रियो।","エアコンが壊れました。","eakon ga kowaremashita"],
+["Ghar ・ 住まい","When is garbage day?","फोहोर फाल्ने दिन कहिले हो?","ゴミの日はいつですか。","gomi no hi wa itsu desu ka"],
+["Kaam ・ 仕事","I can only work 28 hours a week.","म हप्तामा २८ घण्टा मात्र काम गर्न सक्छु।","週28時間までしか働けません。","shū nijūhachi-jikan made shika hatarakemasen"],
+["Samanya ・ 日常","I am from Nepal.","म नेपालबाट आएको हुँ।","ネパールから来ました。","Nepāru kara kimashita"]
+];
+var cats=["all"].concat(P.map(function(p){return p[0]}).filter(function(v,i,a){return a.indexOf(v)===i}));
+function setCat(c){cat=c;renderPhrases()}
+function renderPhrases(){
+  $("chips").innerHTML=cats.map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" onclick="setCat(\''+c+'\')">'+(c==="all"?"Sabai ・ 全部":c)+'</button>'}).join("");
+  var q=$("q").value.trim().toLowerCase(),h="";
+  P.forEach(function(p){
+    if(cat!=="all"&&p[0]!==cat)return;
+    if(q&&p.slice(1).join(" ").toLowerCase().indexOf(q)<0)return;
+    h+='<div class="ph"><div class="en">'+esc(p[1])+'</div><div class="ne">'+esc(p[2])+'</div><div class="jp">'+esc(p[3])+'</div><div class="ro">'+esc(p[4])+'</div></div>'});
+  $("plist").innerHTML=h||'<div class="empty">Bhetiyena ・ 見つかりません</div>';
+}
+var budget=load("js_budget",0);
+function setBudget(){var v=parseFloat($("bud").value);budget=v>0?v:0;save("js_budget",budget);renderExpenses()}
+function budgetUI(sum){var e=$("bmsg");if(!budget){e.innerHTML="";return}var p=Math.round(sum/budget*100),c=p>=100?"er":p>=80?"wa":"ok";e.innerHTML='<div class="bar"><span>Budget</span><span class="tr"><i style="width:'+Math.min(p,100)+'%;background:var(--'+c+')"></i></span><span>'+p+'%</span></div>'+(p>=100?'<div class="alert">Budget paar bhayo! ・ 予算超過</div>':p>=80?'<div class="alert wa">Budget ko 80% pugyo ・ 予算の80%</div>':'')}
+function conv(s){var r=parseFloat($("rate").value);if(!(r>0))return;save("js_rate",r);var j=$("cj"),n=$("cn");if(s==="j"){n.value=j.value===""?"":(j.value*r).toFixed(2)}else{j.value=n.value===""?"":(n.value/r).toFixed(2)}}
+function exportData(){$("bk").value=JSON.stringify({d:deadlines,e:expenses,b:budget,r:load("js_rate",0)})}
+function copyData(){try{$("bk").select();navigator.clipboard.writeText($("bk").value)}catch(e){}}
+function cl(s){return String(s||"").replace(/[^a-z0-9]/gi,"")||uid()}
+function importData(){try{var o=JSON.parse($("bk").value);if(!Array.isArray(o.d)||!Array.isArray(o.e))throw 0;
+deadlines=o.d.map(function(x){return{id:cl(x.id),name:String(x.name||""),date:String(x.date||"")}});
+expenses=o.e.map(function(x){return{id:cl(x.id),amt:+x.amt||0,date:String(x.date||""),cat:String(x.cat||"")}});
+budget=+o.b||0;save("js_deadlines",deadlines);save("js_expenses",expenses);save("js_budget",budget);if(+o.r>0){save("js_rate",+o.r);$("rate").value=+o.r}
+$("bud").value=budget||"";renderDeadlines();renderExpenses();alert("Thik chha ・ OK")}catch(e){alert("Data galat chha ・ データが正しくありません")}}
+function notifOn(){try{Notification.requestPermission().then(function(p){alert(p==="granted"?"Thik chha ・ OK":"Anumati bhayena ・ 許可されていません");checkNotif()})}catch(e){alert("Yo browser ma chaldaina ・ 非対応")}}
+function checkNotif(){try{if(Notification.permission!=="granted")return;deadlines.forEach(function(x){var n=daysLeft(x.date);if(n>=0&&n<=7)new Notification("Japan Sathi",{body:x.name+": "+n+" din baki"})})}catch(e){}}
+var KL="N5",K=[
+["N5","日","din, surya (day, sun)","ニチ・ジツ / ひ","日本 (にほん) Japan ・ 今日 (きょう) aaja"],
+["N5","月","mahina, chandrama (month, moon)","ゲツ・ガツ / つき","月曜日 (げつようび) Monday ・ 来月 (らいげつ) arko mahina"],
+["N5","火","aago (fire)","カ / ひ","火曜日 (かようび) Tuesday"],
+["N5","水","pani (water)","スイ / みず","水 (みず) pani ・ 水曜日 (すいようび) Wednesday"],
+["N5","木","rukh (tree)","モク / き","木 (き) rukh ・ 木曜日 (もくようび) Thursday"],
+["N5","金","सुन, पैसा (gold, money)","キン / かね","お金 (おかね) paisa ・ 金曜日 (きんようび) Friday"],
+["N5","土","mato (earth)","ド / つち","土曜日 (どようび) Saturday"],
+["N5","人","manche (person)","ジン・ニン / ひと","日本人 (にほんじん) Japanese manche ・ 人 (ひと) manche"],
+["N5","大","thulo (big)","ダイ / おお(きい)","大きい (おおきい) thulo ・ 大学 (だいがく) university"],
+["N5","小","sano (small)","ショウ / ちい(さい)","小さい (ちいさい) sano"],
+["N5","中","bhitra, bich (inside, middle)","チュウ / なか","中 (なか) bhitra"],
+["N5","学","sikne (study)","ガク / まな(ぶ)","学生 (がくせい) bidyarthi"],
+["N5","校","school","コウ","学校 (がっこう) school"],
+["N5","生","janma, jiwan (birth, life)","セイ・ショウ / い(きる)・う(まれる)","先生 (せんせい) shikshak ・ 生まれる (うまれる) janmanu"],
+["N5","先","aghi (before)","セン / さき","先生 (せんせい) teacher ・ 先月 (せんげつ) gayeko mahina"],
+["N5","本","kitab, mul (book, origin)","ホン / もと","本 (ほん) kitab ・ 日本 (にほん) Japan"],
+["N5","行","jaanu (go)","コウ / い(く)","行く (いく) jaanu"],
+["N5","来","aaunu (come)","ライ / く(る)","来る (くる) aaunu ・ 来週 (らいしゅう) arko hapta"],
+["N5","食","khanu (eat)","ショク / た(べる)","食べる (たべる) khanu ・ 食事 (しょくじ) khana"],
+["N5","飲","piunu (drink)","イン / の(む)","飲む (のむ) piunu ・ 飲み物 (のみもの) peya"],
+["N5","見","herne (see)","ケン / み(る)","見る (みる) herne"],
+["N5","話","kura garnu (talk)","ワ / はな(す)","話す (はなす) bolnu ・ 電話 (でんわ) phone"],
+["N5","語","bhasa (language)","ゴ","日本語 (にほんご) Japanese bhasa"],
+["N5","電","bijuli (electric)","デン","電車 (でんしゃ) train ・ 電話 (でんわ) phone"],
+["N5","車","gadi (car)","シャ / くるま","車 (くるま) car"],
+["N4","家","ghar, pariwar (house, family)","カ / いえ・うち","家族 (かぞく) pariwar ・ 家 (いえ) ghar"],
+["N4","会","bhet, sabha (meet)","カイ / あ(う)","会社 (かいしゃ) company ・ 会う (あう) bhetnu"],
+["N4","社","company, sansthan","シャ","会社 (かいしゃ) company"],
+["N4","駅","station","エキ","駅 (えき) station"],
+["N4","病","rog (illness)","ビョウ / や(む)","病院 (びょういん) aspatal ・ 病気 (びょうき) birami"],
+["N4","院","sansthan (institution)","イン","病院 (びょういん) hospital"],
+["N4","働","kaam garnu (work)","ドウ / はたら(く)","働く (はたらく) kaam garnu"],
+["N4","知","jannu (know)","チ / し(る)","知る (しる) jannu"],
+["N4","使","prayog garnu (use)","シ / つか(う)","使う (つかう) prayog garnu"],
+["N4","送","pathaunu (send)","ソウ / おく(る)","送金 (そうきん) paisa pathaunu ・ 送る (おくる) pathaunu"],
+["N4","借","udhaaro linu (borrow)","シャク / か(りる)","借りる (かりる) udhaaro linu"],
+["N4","考","sochnu (think)","コウ / かんが(える)","考える (かんがえる) sochnu"],
+["Visa","在","hunu, basnu (exist, reside)","ザイ / あ(る)","在留 (ざいりゅう) basai"],
+["Visa","留","basnu, rokinu (stay)","リュウ / と(まる)","在留カード (ざいりゅうカード) residence card"],
+["Visa","更","pheri, naya garnu (renew)","コウ / さら","更新 (こうしん) renew garnu"],
+["Visa","新","naya (new)","シン / あたら(しい)","新しい (あたらしい) naya"],
+["Visa","税","kar (tax)","ゼイ","税金 (ぜいきん) tax"],
+["Visa","保","surakshit rakhnu (protect)","ホ / たも(つ)","保険 (ほけん) insurance"],
+["Visa","険","jokhim (danger)","ケン / けわ(しい)","保険 (ほけん) insurance"],
+["Visa","契","kabuliyat (pledge)","ケイ","契約 (けいやく) contract"],
+["Visa","約","wada (promise)","ヤク","契約 (けいやく) contract ・ 約束 (やくそく) wada"],
+["Visa","期","awadhi (period)","キ","期限 (きげん) deadline ・ 在留期間 (ざいりゅうきかん) visa awadhi"],
+["Visa","限","हद (limit)","ゲン / かぎ(る)","期限 (きげん) deadline ・ 制限 (せいげん) limit"],
+["Visa","申","aawedan garnu (apply)","シン / もう(す)","申請 (しんせい) application"],
+["Visa","請","anurodh (request)","セイ","申請 (しんせい) application"],
+["N5","山","पहाड (mountain)","サン / やま","山 (やま) पहाड ・ 富士山 (ふじさん) फुजी पर्वत"],
+["N5","川","खोला, नदी (river)","セン / かわ","川 (かわ) खोला"],
+["N5","雨","वर्षा (rain)","ウ / あめ","雨 (あめ) वर्षा"],
+["N5","天","आकाश (sky)","テン / あま","天気 (てんき) मौसम"],
+["N5","白","सेतो (white)","ハク / しろ(い)","白い (しろい) सेतो"],
+["N5","赤","रातो (red)","セキ / あか(い)","赤い (あかい) रातो"],
+["N5","青","निलो (blue)","セイ / あお(い)","青い (あおい) निलो"],
+["N5","上","माथि (up)","ジョウ / うえ","上 (うえ) माथि"],
+["N5","下","तल (down)","カ・ゲ / した","下 (した) तल"],
+["N3","手","हात (hand)","シュ / て","手続き (てつづき) प्रक्रिया ・ 手 (て) हात"],
+["N3","続","जारी रहनु (continue)","ゾク / つづ(く)","手続き (てつづき) प्रक्रिया ・ 続ける (つづける) जारी राख्नु"],
+["N3","提","अगाडि सार्नु (present)","テイ","提出 (ていしゅつ) बुझाउनु"],
+["N3","出","निस्कनु (go out)","シュツ / で(る)・だ(す)","提出 (ていしゅつ) बुझाउनु ・ 出す (だす) निकाल्नु"],
+["N3","延","लम्ब्याउनु (extend)","エン / の(びる)","延長 (えんちょう) म्याद बढाउनु"],
+["N3","長","लामो (long)","チョウ / なが(い)","長い (ながい) लामो"],
+["N3","必","अवश्य (surely)","ヒツ / かなら(ず)","必要 (ひつよう) आवश्यक"],
+["N3","要","चाहिनु (need)","ヨウ / い(る)","必要 (ひつよう) आवश्यक ・ 要る (いる) चाहिनु"],
+["N3","経","बित्नु, गुज्रनु (pass through)","ケイ / へ(る)","経験 (けいけん) अनुभव"],
+["N3","験","परीक्षा, अनुभव (test)","ケン","経験 (けいけん) अनुभव ・ 試験 (しけん) परीक्षा"],
+["N5","一","एक (one)","イチ / ひと(つ)","一つ (ひとつ) एउटा"],
+["N5","二","दुई (two)","ニ / ふた(つ)","二つ (ふたつ) दुईवटा"],
+["N5","三","तीन (three)","サン / みっ(つ)","三つ (みっつ) तीनवटा"],
+["N5","四","चार (four)","シ / よん・よっ(つ)","四月 (しがつ) अप्रिल"],
+["N5","五","पाँच (five)","ゴ / いつ(つ)","五月 (ごがつ) मे"],
+["N5","六","छ (six)","ロク / むっ(つ)","六時 (ろくじ) छ बजे"],
+["N5","七","सात (seven)","シチ / なな","七時 (しちじ) सात बजे"],
+["N5","八","आठ (eight)","ハチ / やっ(つ)","八月 (はちがつ) अगस्ट"],
+["N5","九","नौ (nine)","キュウ・ク / ここの(つ)","九時 (くじ) नौ बजे"],
+["N5","十","दश (ten)","ジュウ / とお","十日 (とおか) दश तारिख"],
+["N5","百","सय (hundred)","ヒャク","百円 (ひゃくえん) सय येन"],
+["N5","千","हजार (thousand)","セン / ち","千円 (せんえん) हजार येन"],
+["N5","万","दश हजार (ten thousand)","マン","一万円 (いちまんえん) दश हजार येन"],
+["N5","円","येन, गोलो (yen, circle)","エン / まる(い)","円 (えん) येन"],
+["N5","年","वर्ष (year)","ネン / とし","今年 (ことし) यस वर्ष"],
+["N5","時","समय, बजे (time, o'clock)","ジ / とき","時間 (じかん) समय"],
+["N5","間","बिच, अन्तर (between)","カン / あいだ","時間 (じかん) समय"],
+["N5","分","मिनेट, बुझ्नु (minute)","フン・ブン / わ(かる)","分かる (わかる) बुझ्नु"],
+["N5","半","आधा (half)","ハン","半分 (はんぶん) आधा"],
+["N5","今","अहिले (now)","コン / いま","今 (いま) अहिले"],
+["N5","何","के, कति (what)","カ / なに・なん","何 (なに) के"],
+["N5","午","दिउँसो (noon)","ゴ","午後 (ごご) दिउँसोपछि"],
+["N5","前","अघि (before)","ゼン / まえ","午前 (ごぜん) बिहान"],
+["N5","後","पछि (after)","ゴ・コウ / あと・うし(ろ)","午後 (ごご) दिउँसोपछि"],
+["N5","外","बाहिर (outside)","ガイ / そと","外国 (がいこく) विदेश"],
+["N5","国","देश (country)","コク / くに","国 (くに) देश"],
+["N5","友","साथी (friend)","ユウ / とも","友達 (ともだち) साथी"],
+["N5","名","नाम (name)","メイ / な","名前 (なまえ) नाम"],
+["N5","多","धेरै (many)","タ / おお(い)","多い (おおい) धेरै"],
+["N5","少","थोरै (few)","ショウ / すく(ない)","少ない (すくない) थोरै"],
+["N5","高","अग्लो, महँगो (high)","コウ / たか(い)","高い (たかい) महँगो"],
+["N5","安","सस्तो (cheap)","アン / やす(い)","安い (やすい) सस्तो"],
+["N5","子","बच्चा (child)","シ / こ","子ども (こども) बच्चा"],
+["N5","女","महिला (woman)","ジョ / おんな","女の人 (おんなのひと) महिला"],
+["N5","男","पुरुष (man)","ダン / おとこ","男の人 (おとこのひと) पुरुष"],
+["N5","父","बुबा (father)","フ / ちち","お父さん (おとうさん) बुबा"],
+["N5","母","आमा (mother)","ボ / はは","お母さん (おかあさん) आमा"],
+["N5","目","आँखा (eye)","モク / め","目 (め) आँखा"],
+["N5","口","मुख (mouth)","コウ / くち","口 (くち) मुख"],
+["N5","右","दायाँ (right)","ユウ / みぎ","右 (みぎ) दायाँ"],
+["N5","左","बायाँ (left)","サ / ひだり","左 (ひだり) बायाँ"],
+["N5","入","पस्नु (enter)","ニュウ / はい(る)","入る (はいる) पस्नु"],
+["N5","休","आराम, बिदा (rest)","キュウ / やす(む)","休み (やすみ) बिदा"],
+["N5","読","पढ्नु (read)","ドク / よ(む)","読む (よむ) पढ्नु"],
+["N5","書","लेख्नु (write)","ショ / か(く)","書く (かく) लेख्नु"],
+["N5","聞","सुन्नु (listen)","ブン / き(く)","聞く (きく) सुन्नु"],
+["N5","言","भन्नु (say)","ゲン / い(う)","言う (いう) भन्नु"],
+["N5","買","किन्नु (buy)","バイ / か(う)","買う (かう) किन्नु"],
+["N5","売","बेच्नु (sell)","バイ / う(る)","売る (うる) बेच्नु"],
+["N5","店","पसल (shop)","テン / みせ","店 (みせ) पसल"],
+["N5","道","बाटो (road)","ドウ / みち","道 (みち) बाटो"]
+];
+function addK(l,s){s.split("\n").forEach(function(r){var p=r.split("|");if(p.length>2)K.push([l,p[0],p[1],p[2],""])})}
+addK("N4",`不|होइन (not)|フ・ブ
+与|दिनु (give)|ヨ / あた(える)
+世|संसार (world)|セイ / よ
+主|मुख्य (main)|シュ / おも
+乗|चढ्नु (ride)|ジョウ / の(る)
+事|कुरा, काम (matter)|ジ / こと
+京|राजधानी (capital)|キョウ
+仕|सेवा गर्नु (serve)|シ
+代|पुस्ता, बदला (generation)|ダイ / か(わり)
+以|भन्दा (by means of)|イ
+低|होचो (low)|テイ / ひく(い)
+住|बस्नु (live)|ジュウ / す(む)
+体|शरीर (body)|タイ / からだ
+作|बनाउनु (make)|サク / つく(る)
+便|सुविधा (convenient)|ベン / たよ(り)
+全|सबै (all)|ゼン / すべ(て)
+公|सार्वजनिक (public)|コウ
+具|साधन (tool)|グ
+写|खिच्नु (copy)|シャ / うつ(す)
+冬|जाडो (winter)|トウ / ふゆ
+切|काट्नु (cut)|セツ / き(る)
+別|अलग (separate)|ベツ / わか(れる)
+動|चल्नु (move)|ドウ / うご(く)
+勉|मेहनत (effort)|ベン
+区|जिल्ला (ward)|ク
+医|डाक्टर (medicine)|イ
+去|जानु (leave)|キョ / さ(る)
+参|भाग लिनु (visit)|サン / まい(る)
+反|उल्टो (against)|ハン
+発|निस्कनु (depart)|ハツ
+取|लिनु (take)|シュ / と(る)
+受|पाउनु (receive)|ジュ / う(ける)
+可|सकिने (can)|カ
+号|नम्बर (number)|ゴウ
+合|मिल्नु (match)|ゴウ / あ(う)
+同|उस्तै (same)|ドウ / おな(じ)
+味|स्वाद (taste)|ミ / あじ
+品|सामान (goods)|ヒン / しな
+員|सदस्य (member)|イン
+問|प्रश्न (question)|モン / と(う)
+回|पटक (times)|カイ / まわ(る)
+図|नक्सा (diagram)|ズ
+地|भूमि (ground)|チ・ジ
+堂|हल (hall)|ドウ
+場|ठाउँ (place)|ジョウ / ば
+声|आवाज (voice)|セイ / こえ
+夏|गर्मी (summer)|カ / なつ
+夕|साँझ (evening)|セキ / ゆう
+夜|रात (night)|ヤ / よる
+太|मोटो (thick)|タイ / ふと(い)
+奥|भित्री भाग (interior)|オウ / おく
+好|मन पराउनु (like)|コウ / す(き)
+妹|बहिनी (younger sister)|マイ / いもうと
+姉|दिदी (older sister)|シ / あね
+弟|भाइ (younger brother)|テイ / おとうと
+始|सुरु (begin)|シ / はじ(める)
+字|अक्षर (letter)|ジ
+室|कोठा (room)|シツ / むろ
+寒|चिसो (cold)|カン / さむ(い)
+屋|घर, पसल (roof, shop)|オク / や
+工|काम, इन्जिनियर (craft)|コウ
+市|सहर (city)|シ / いち
+帰|फर्कनु (return)|キ / かえ(る)
+広|फराकिलो (wide)|コウ / ひろ(い)
+度|पटक, डिग्री (degree)|ド / たび
+建|बनाउनु (build)|ケン / た(てる)
+引|तान्नु (pull)|イン / ひ(く)
+弱|कमजोर (weak)|ジャク / よわ(い)
+強|बलियो (strong)|キョウ / つよ(い)
+当|ठीक, लाग्नु (hit)|トウ / あ(たる)
+心|मन, हृदय (heart)|シン / こころ
+思|सोच्नु (think)|シ / おも(う)
+急|हतार (hurry)|キュウ / いそ(ぐ)
+悪|खराब (bad)|アク / わる(い)
+意|अर्थ, मन (meaning)|イ
+想|कल्पना (idea)|ソウ
+愛|माया (love)|アイ
+感|महसुस (feel)|カン
+持|बोक्नु (hold)|ジ / も(つ)
+教|सिकाउनु (teach)|キョウ / おし(える)
+文|वाक्य, लेख (sentence)|ブン / ふみ
+料|शुल्क, सामग्री (fee)|リョウ
+方|तर्फ, तरिका (way)|ホウ / かた
+旅|यात्रा (travel)|リョ / たび
+族|परिवार (tribe)|ゾク
+早|चाँडो (early)|ソウ / はや(い)
+明|उज्यालो (bright)|メイ / あか(るい)
+映|देखाउनु (reflect)|エイ / うつ(る)
+春|वसन्त (spring)|シュン / はる
+昼|दिउँसो (daytime)|チュウ / ひる
+暑|तातो मौसम (hot)|ショ / あつ(い)
+暗|अँध्यारो (dark)|アン / くら(い)
+曜|बार (weekday)|ヨウ
+有|हुनु (have)|ユウ / あ(る)
+服|लुगा (clothes)|フク
+村|गाउँ (village)|ソン / むら
+林|सानो जंगल (grove)|リン / はやし
+森|जंगल (forest)|シン / もり
+業|उद्योग (business)|ギョウ
+楽|रमाइलो (enjoy)|ガク・ラク / たの(しい)
+歌|गीत (song)|カ / うた
+止|रोक्नु (stop)|シ / と(まる)
+正|सही (correct)|セイ / ただ(しい)
+歩|हिँड्नु (walk)|ホ / ある(く)
+死|मर्नु (die)|シ / し(ぬ)
+民|जनता (people)|ミン
+池|पोखरी (pond)|チ / いけ
+注|ध्यान दिनु (pour)|チュウ
+洋|पश्चिमी (western)|ヨウ
+洗|धुनु (wash)|セン / あら(う)
+海|समुद्र (sea)|カイ / うみ
+漢|चिनियाँ (Chinese)|カン
+牛|गाई, गोरु (cow)|ギュウ / うし
+物|वस्तु (thing)|ブツ / もの
+特|विशेष (special)|トク
+犬|कुकुर (dog)|ケン / いぬ
+理|तर्क, कारण (reason)|リ
+産|उत्पादन (produce)|サン / う(む)
+用|प्रयोग, काम (use)|ヨウ
+田|खेत (rice field)|デン / た
+町|सहर, टोल (town)|チョウ / まち
+画|चित्र (picture)|ガ
+界|संसार, सीमा (world)|カイ
+真|साँचो (true)|シン / ま
+着|लगाउनु, पुग्नु (wear, arrive)|チャク / き(る)
+短|छोटो (short)|タン / みじか(い)
+研|अनुसन्धान (study)|ケン
+礼|नमस्कार (bow)|レイ
+究|खोज्नु (research)|キュウ
+窓|झ्याल (window)|ソウ / まど
+米|चामल (rice)|ベイ / こめ
+紙|कागज (paper)|シ / かみ
+終|सकिनु (end)|シュウ / お(わる)
+結|बाँध्नु (tie)|ケツ / むす(ぶ)
+肉|मासु (meat)|ニク
+自|आफू (self)|ジ
+色|रङ (color)|ショク / いろ
+花|फूल (flower)|カ / はな
+茶|चिया (tea)|チャ
+菜|तरकारी (vegetable)|サイ / な
+薬|औषधि (medicine)|ヤク / くすり
+親|अभिभावक (parent)|シン / おや
+計|गणना (measure)|ケイ / はか(る)
+試|परीक्षा (test)|シ / ため(す)
+説|व्याख्या (explain)|セツ
+貸|उधार दिनु (lend)|タイ / か(す)
+質|गुण (quality)|シツ
+走|दौडनु (run)|ソウ / はし(る)
+起|उठ्नु (wake)|キ / お(きる)
+転|घुम्नु (turn)|テン / ころ(ぶ)
+軽|हलुका (light)|ケイ / かる(い)
+近|नजिक (near)|キン / ちか(い)
+通|हिँड्नु, जोडिनु (pass)|ツウ / とお(る)
+進|अगाडि बढ्नु (advance)|シン / すす(む)
+運|ढुवानी, भाग्य (carry, luck)|ウン / はこ(ぶ)
+遅|ढिलो (late)|チ / おそ(い)
+部|भाग (section)|ブ
+都|राजधानी (capital)|ト / みやこ
+配|बाँड्नु (distribute)|ハイ / くば(る)
+重|गह्रौं (heavy)|ジュウ / おも(い)
+野|मैदान (field)|ヤ / の
+銀|चाँदी (silver)|ギン
+開|खोल्नु (open)|カイ / あ(ける)
+集|जम्मा गर्नु (gather)|シュウ / あつ(める)
+雪|हिउँ (snow)|セツ / ゆき
+音|आवाज (sound)|オン / おと
+題|विषय (topic)|ダイ
+顔|अनुहार (face)|ガン / かお
+風|हावा (wind)|フウ / かぜ
+飯|भात (meal)|ハン / めし
+館|भवन (building)|カン
+魚|माछा (fish)|ギョ / さかな
+鳥|चरा (bird)|チョウ / とり
+黄|पहेँलो (yellow)|オウ / き
+黒|कालो (black)|コク / くろ(い)`);
+function setKL(l){KL=l;renderKanji()}
+function renderKanji(){
+  var lv=["N5","N4","N3","Visa"],q=$("kq").value.trim().toLowerCase(),h="";
+  $("kchips").innerHTML=lv.map(function(l){return '<button class="chip'+(l===KL?' on':'')+'" onclick="setKL(\''+l+'\')">'+(l==="Visa"?"Visa ・ 在留":l)+'</button>'}).join("");
+  K.forEach(function(x){
+    if(!q&&x[0]!==KL)return;
+    if(q&&x.join(" ").toLowerCase().indexOf(q)<0)return;
+    h+='<div class="kc"><div class="kb">'+esc(x[1])+'</div><div><b>'+esc(x[2])+'</b><div class="ro">On / Kun: '+esc(x[3])+'</div><div>'+esc(x[4])+'</div></div></div>'});
+  $("klist").innerHTML=h||'<div class="empty">Bhetiyena ・ 見つかりません</div>';
+}
+renderKanji();
+var W=[
+"N5|Namaste・挨拶|ありがとう|arigatō|dhanyabad (thank you)|ありがとうございます。=Dhanyabad.",
+"N5|Namaste・挨拶|おはよう|ohayō|subha prabhat (good morning)|おはようございます。=Subha prabhat.",
+"N5|Namaste・挨拶|すみません|sumimasen|maaf garnus (excuse me)|すみません、駅はどこですか。=Excuse me, where is the station?",
+"N5|Namaste・挨拶|お願いします|onegai shimasu|kripaya (please)|水をお願いします。=Water, please.",
+"N5|Khana・食べ物|水|mizu|pani (water)|水を飲みます。=I drink water.",
+"N5|Khana・食べ物|ご飯|gohan|bhat, khana (rice, meal)|ご飯を食べます。=I eat rice.",
+"N5|Khana・食べ物|魚|sakana|machha (fish)|魚が好きです。=I like fish.",
+"N5|Khana・食べ物|肉|niku|masu (meat)|肉は食べません。=I do not eat meat.",
+"N5|Samay・時間|今日|kyō|aaja (today)|今日は休みです。=Today is a day off.",
+"N5|Samay・時間|明日|ashita|bholi (tomorrow)|明日テストがあります。=There is a test tomorrow.",
+"N5|Samay・時間|毎日|mainichi|pratidin (every day)|毎日勉強します。=I study every day.",
+"N5|Samay・時間|今|ima|ahile (now)|今、何時ですか。=What time is it now?",
+"N5|Kriya・動詞|食べる|taberu|khanu (eat)|朝ご飯を食べる。=Eat breakfast.",
+"N5|Kriya・動詞|行く|iku|jaanu (go)|学校に行きます。=I go to school.",
+"N5|Kriya・動詞|買う|kau|kinnu (buy)|本を買います。=I buy a book.",
+"N5|Kriya・動詞|分かる|wakaru|bujhnu (understand)|分かりません。=I do not understand.",
+"N4|Kaam・仕事|残業|zangyō|overtime|残業は何時までですか。=Until when is overtime?",
+"N4|Kaam・仕事|給料|kyūryō|talab (salary)|給料は月末です。=Pay is at the end of the month.",
+"N4|Kaam・仕事|予約|yoyaku|booking (reservation)|病院を予約します。=I book the hospital.",
+"N4|Kaam・仕事|相談|sōdan|salaah (consult)|先生に相談します。=I consult the teacher.",
+"N4|Jiwan・生活|引っ越し|hikkoshi|ghar sarnu (moving)|来月引っ越しします。=I move next month.",
+"N4|Jiwan・生活|家賃|yachin|ghar bhada (rent)|家賃は七万円です。=Rent is 70,000 yen.",
+"N4|Jiwan・生活|心配|shinpai|chinta (worry)|心配しないでください。=Please do not worry.",
+"N4|Jiwan・生活|準備|junbi|tayari (preparation)|試験の準備をします。=I prepare for the exam.",
+"N3|Visa・手続き|手続き|tetsuzuki|prakriya (procedure)|手続きに行きます。=I go to do the procedure.",
+"N3|Visa・手続き|提出|teishutsu|bujhaunu (submit)|書類を提出します。=I submit the documents.",
+"N3|Visa・手続き|延長|enchō|badhaaunu (extend)|期間を延長したいです。=I want to extend the period.",
+"N3|Jiwan・生活|経験|keiken|anubhav (experience)|いい経験になりました。=It became a good experience.",
+"N3|Jiwan・生活|必要|hitsuyō|aawashyak (necessary)|パスポートが必要です。=A passport is necessary.",
+"N2|Samaj・社会|制度|seido|pranali, niyam (system)|新しい制度が始まる。=A new system starts.",
+"N2|Samaj・社会|影響|eikyō|prabhav (influence)|天気の影響を受ける。=Affected by the weather.",
+"N2|Samaj・社会|可能|kanō|sambhav (possible)|変更は可能ですか。=Is a change possible?",
+"N2|Samaj・社会|契約|keiyaku|kabuliyat (contract)|契約書にサインする。=Sign the contract.",
+"N1|Uchcha・高度|概念|gainen|dharana (concept)|新しい概念を学ぶ。=Learn a new concept.",
+"N1|Uchcha・高度|把握|haaku|bujhera dharan garnu (grasp)|状況を把握する。=Grasp the situation.",
+"N1|Uchcha・高度|貢献|kōken|yogadan (contribution)|社会に貢献したい。=I want to contribute to society."
+].map(function(r){return r.split("|")});
+var WL="N5",WS="all";
+function wcard(x){var e=x[5].split("=");return '<div class="wc"><div class="wh"><span class="lv lv'+x[0]+'">'+x[0]+'</span><b class="ww">'+esc(x[2])+'</b><span class="ro">'+esc(x[3])+'</span></div><div><b>'+esc(x[4])+'</b></div><div class="ex">'+esc(e[0])+'<br><span class="ro">'+esc(e[1]||"")+'</span></div></div>'}
+function setWL(l){WL=l;WS="all";renderWords()}
+function setWS(i){WS=i;renderWords()}
+function renderWords(){
+  var q=$("wq").value.trim().toLowerCase(),h="";
+  $("wlv").innerHTML=["N5","N4","N3","N2","N1"].map(function(l){return '<button class="chip'+(l===WL?' on':'')+'" onclick="setWL(\''+l+'\')">'+l+'</button>'}).join("");
+  var ls=W.filter(function(x){return x[0]===WL}).map(function(x){return x[1]}).filter(function(v,i,a){return a.indexOf(v)===i});
+  $("wls").innerHTML=ls.map(function(s,i){return '<button class="chip'+(WS===s?' on':'')+'" onclick="setWS(WSL['+i+'])">'+esc(s)+'</button>'}).join("");
+  window.WSL=ls;
+  W.forEach(function(x){
+    if(!q&&(x[0]!==WL||(WS!=="all"&&x[1]!==WS)))return;
+    if(q&&x.join(" ").toLowerCase().indexOf(q)<0)return;
+    h+=wcard(x)});
+  $("wlist").innerHTML=h||'<div class="empty">Bhetiyena ・ 見つかりません</div>';
+}
+function dstate(){var d=load("js_daily",{});if(d.date!==iso(today()))d={date:iso(today()),c:[0,0,0]};return d}
+function toggleD(n){var d=dstate();d.c[n]=d.c[n]?0:1;save("js_daily",d);
+  if(d.c[0]&&d.c[1]&&d.c[2]){var s=load("js_streak",{last:"",n:0}),t=iso(today()),y=new Date(today());y.setDate(y.getDate()-1);
+    if(s.last!==t){s.n=s.last===iso(y)?s.n+1:1;s.last=t;save("js_streak",s)}}
+  renderStreak()}
+var DL=["5 shabda padhnus ・ 単語5つ","1 kanji yaad garnus ・ 漢字1つ","1 phrase mukh le bolnus ・ フレーズ1つ"];
+function renderStreak(){var d=dstate(),s=load("js_streak",{last:"",n:0}),t=iso(today()),y=new Date(today());y.setDate(y.getDate()-1);
+  var n=(s.last===t||s.last===iso(y))?s.n:0;
+  $("dcheck").innerHTML=DL.map(function(x,i){return '<label class="ck"><input type="checkbox" '+(d.c[i]?'checked ':'')+'onchange="toggleD('+i+')"> '+x+'</label>'}).join("");
+  $("dstreak").textContent="🔥 "+n+" din"}
+function renderDaily(){
+  var i=Math.floor(Date.now()/864e5),ws="",k=K[i%K.length],p=P[i%P.length];
+  for(var j=0;j<5;j++)ws+=wcard(W[(i*5+j)%W.length]);
+  $("dwords").innerHTML=ws;
+  $("dkan").innerHTML='<div class="kc" style="border:0"><div class="kb">'+esc(k[1])+'</div><div><b>'+esc(k[2])+'</b><div class="ro">'+esc(k[3])+'</div><div>'+esc(k[4])+'</div></div></div>';
+  $("dph").innerHTML='<div class="ph"><div class="en">'+esc(p[1])+'</div><div class="ne">'+esc(p[2])+'</div><div class="jp">'+esc(p[3])+'</div><div class="ro">'+esc(p[4])+'</div></div>';
+  renderStreak()}
+if(budget)$("bud").value=budget;
+$("rate").value=load("js_rate",0.9);
+checkNotif();
+$("edate").value=iso(today());
+var ND={};"aaja:आज,aajako:आजको,aaunu:आउनु,aaunchha:आउँछ,aayeko:आएको,aago:आगो,aawashyak:आवश्यक,aawedan:आवेदन,aba:अब,afai:आफै,afnai:आफ्नै,aghi:अघि,agadi:अगाडि,ahile:अहिले,anumaanit:अनुमानित,anumati:अनुमति,anubhav:अनुभव,anurodh:अनुरोध,antim:अन्तिम,anusar:अनुसार,arko:अर्को,aru:अरू,aspatal:अस्पताल,awaaj:आवाज,awadhi:अवधि,badhaaunu:बढाउनु,baki:बाँकी,basai:बसाइ,basnu:बस्नु,bata:बाट,bhada:भाडा,bhasa:भाषा,bhat:भात,bhayena:भएन,bhayo:भयो,bhet:भेट,bhetiyena:भेटिएन,bhetnu:भेट्नु,bhitra:भित्र,bich:बिच,bidyarthi:विद्यार्थी,bijuli:बिजुली,bimar:बिरामी,birami:बिरामी,bityo:बित्यो,bitisakyo:बितिसक्यो,bholi:भोलि,bolnu:बोल्नु,bolnus:बोल्नुहोस्,bujhera:बुझेर,bujhaunu:बुझाउनु,bujhnu:बुझ्नु,chandrama:चन्द्रमा,chha:छ,chhaina:छैन,chhan:छन्,chaldaina:चल्दैन,chini:चीन,chinta:चिन्ता,chor:चोर,dekhi:देखि,dekhinchha:देखिन्छ,dharan:धारण,dharana:धारणा,dhanyabad:धन्यवाद,din:दिन,durghatana:दुर्घटना,galat:गलत,garera:गरेर,garnu:गर्नु,garnus:गर्नुहोस्,gadi:गाडी,gayeko:गएको,ghanta:घण्टा,ghar:घर,hal:हाल,halnus:हाल्नुहोस्,haru:हरू,hapta:हप्ता,herne:हेर्ने,ho:हो,hunu:हुनु,hunchha:हुन्छ,jaanu:जानु,jannu:जान्नु,janma:जन्म,jaruri:जरुरी,jiwan:जीवन,jokhim:जोखिम,kabuliyat:कबुलियत,kagaj:कागज,kaam:काम,kati:कति,kar:कर,kehi:केही,ke:के,kharcha:खर्च,khana:खाना,khanu:खानु,kholda:खोल्दा,khojnus:खोज्नुहोस्,kinnu:किन्नु,kitab:किताब,kripaya:कृपया,ko:को,kriya:क्रिया,kura:कुरा,lagda:लाग्दा,lakshya:लक्ष्य,le:ले,lekhnus:लेख्नुहोस्,lijana:लैजान,linu:लिनु,ma:मा,maaf:माफ,machha:माछा,mahina:महिना,manche:मान्छे,masu:मासु,mathi:माथि,mato:माटो,mero:मेरो,milna:मिल्न,milaye:मिलाए,miti:मिति,mukh:मुख,mul:मूल,naam:नाम,namaste:नमस्ते,naya:नयाँ,nayaa:नयाँ,nai:नै,nepali:नेपाली,niyam:नियम,padhai:पढाइ,padhnus:पढ्नुहोस्,paar:पार,pahile:पहिले,paisa:पैसा,pani:पानी,pariwar:परिवार,pasal:पसल,pathaunu:पठाउनु,pathaune:पठाउने,peya:पेय,pheri:फेरि,piunu:पिउनु,prabhat:प्रभात,prabhav:प्रभाव,prakar:प्रकार,prakriya:प्रक्रिया,pranali:प्रणाली,pratidin:प्रतिदिन,prayog:प्रयोग,pugyo:पुग्यो,pura:पुरा,ra:र,rakam:रकम,rakhnu:राख्नु,rog:रोग,rokinu:रोकिनु,rukh:रुख,rupaiya:रुपैयाँ,sabai:सबै,sabha:सभा,sajilo:सजिलो,salaah:सल्लाह,samaj:समाज,samanya:सामान्य,sambandha:सम्बन्ध,sambhav:सम्भव,samay:समय,samma:सम्म,samudri:सामुद्रिक,samundra:समुद्र,sanga:सँग,sansthan:संस्था,sano:सानो,sakdaina:सक्दैन,sarnu:सार्नु,shabda:शब्द,shikshak:शिक्षक,sikne:सिक्ने,sochnu:सोच्नु,sodhnus:सोध्नुहोस्,subha:शुभ,suraksha:सुरक्षा,surakshit:सुरक्षित,surya:सूर्य,suru:सुरु,talab:तलब,tala:तल,tayar:तयार,tayari:तयारी,thapnus:थप्नुहोस्,thichnus:थिच्नुहोस्,thik:ठीक,thulo:ठूलो,turuntai:तुरुन्तै,uchcha:उच्च,udhaaro:उधारो,wada:वाचा,yaad:याद,yaha:यहाँ,yatayat:यातायात,yo:यो,yogadan:योगदान".split(",").forEach(function(p){var i=p.indexOf(":");ND[p.slice(0,i)]=p.slice(i+1)});
+function neT(s){return String(s).replace(/[A-Za-z]+/g,function(m){return ND[m.toLowerCase()]||m})}
+function nepalize(){var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),t,L=[];while(t=w.nextNode())L.push(t);
+  L.forEach(function(t){var p=t.parentNode.nodeName;if(p==="SCRIPT"||p==="STYLE"||p==="TEXTAREA")return;var v=neT(t.nodeValue);if(v!==t.nodeValue)t.nodeValue=v});
+  Array.prototype.forEach.call(document.querySelectorAll("[placeholder]"),function(e){e.setAttribute("placeholder",neT(e.getAttribute("placeholder")))})}
+var _al=window.alert;window.alert=function(m){_al(neT(m))};
+renderDeadlines();renderExpenses();renderPhrases();renderWords();renderDaily();tab('day');
+Array.prototype.forEach.call(document.querySelectorAll(".sub"),function(e){var me=e.parentNode.id.slice(2),ids=["phr","kan","wrd"],nm=["Phrase ・ フレーズ","Kanji ・ 漢字","Shabda ・ 単語"];e.innerHTML=ids.map(function(id,j){return '<button class="chip'+(id===me?' on':'')+'" onclick="tab(\''+id+'\')">'+nm[j]+'</button>'}).join("")});
+nepalize();var nq=0;new MutationObserver(function(){if(nq)return;nq=1;setTimeout(function(){nq=0;nepalize()},0)}).observe(document.body,{childList:true,subtree:true,characterData:true});
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){try{navigator.serviceWorker.register('sw.js')}catch(e){}})}</script>
+</body>
+</html>
