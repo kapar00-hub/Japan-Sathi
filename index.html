@@ -265,7 +265,18 @@ var P=[
 ["Ghar ・ 住まい","The air conditioner is broken.","एयर कन्डिसनर बिग्रियो।","エアコンが壊れました。","eakon ga kowaremashita"],
 ["Ghar ・ 住まい","When is garbage day?","फोहोर फाल्ने दिन कहिले हो?","ゴミの日はいつですか。","gomi no hi wa itsu desu ka"],
 ["Kaam ・ 仕事","I can only work 28 hours a week.","म हप्तामा २८ घण्टा मात्र काम गर्न सक्छु।","週28時間までしか働けません。","shū nijūhachi-jikan made shika hatarakemasen"],
-["Samanya ・ 日常","I am from Nepal.","म नेपालबाट आएको हुँ।","ネパールから来ました。","Nepāru kara kimashita"]
+["Samanya ・ 日常","I am from Nepal.","म नेपालबाट आएको हुँ।","ネパールから来ました。","Nepāru kara kimashita"],
+["Aspatal ・ 病院","I have a headache.","मेरो टाउको दुख्यो।","頭が痛いです。","atama ga itai desu"],
+["Aspatal ・ 病院","I have a cough.","मलाई खोकी लागेको छ।","咳が出ます。","seki ga demasu"],
+["Aspatal ・ 病院","Is there a Nepali interpreter?","नेपाली दोभाषे हुनुहुन्छ?","ネパール語の通訳はいますか。","Nepāru-go no tsūyaku wa imasu ka"],
+["Interview ・ 面接","Nice to meet you.","भेटेर खुसी लाग्यो।","はじめまして。よろしくお願いします。","hajimemashite. yoroshiku onegai shimasu"],
+["Interview ・ 面接","I have studied Japanese for one year.","मैले एक वर्ष जापानी भाषा पढेको छु।","日本語を一年勉強しました。","Nihongo o ichinen benkyō shimashita"],
+["Interview ・ 面接","I can start working from next month.","म अर्को महिनादेखि काम सुरु गर्न सक्छु।","来月から働けます。","raigetsu kara hatarakemasu"],
+["Interview ・ 面接","Please tell me about the work.","कामको बारेमा बताइदिनुहोस्।","仕事について教えてください。","shigoto ni tsuite oshiete kudasai"],
+["Ghar ・ 住まい","How much is the monthly rent?","महिनाको भाडा कति हो?","家賃はいくらですか。","yachin wa ikura desu ka"],
+["Ghar ・ 住まい","Is a deposit needed?","धरौटी चाहिन्छ?","敷金は必要ですか。","shikikin wa hitsuyō desu ka"],
+["Ghar ・ 住まい","Can I see the room?","कोठा हेर्न सकिन्छ?","部屋を見せてもらえますか。","heya o misete moraemasu ka"],
+["Ghar ・ 住まい","How far is it from the station?","स्टेसनबाट कति टाढा छ?","駅から何分ですか。","eki kara nan-pun desu ka"]
 ];
 var cats=["all"].concat(P.map(function(p){return p[0]}).filter(function(v,i,a){return a.indexOf(v)===i}));
 function setCat(c){cat=c;renderPhrases()}
@@ -590,6 +601,143 @@ addK("N4",`不|होइन (not)|フ・ブ
 鳥|चरा (bird)|チョウ / とり
 黄|पहेँलो (yellow)|オウ / き
 黒|कालो (black)|コク / くろ(い)`);
+addK("N3",`政|शासन (politics)|セイ・ショウ / まつりごと
+議|छलफल (discuss)|ギ
+連|जोड्नु (link)|レン / つ(れる)
+対|विरुद्ध, जोडी (versus)|タイ
+相|आपसमा (mutual)|ソウ / あい
+定|तोक्नु (fix)|テイ / さだ(める)
+選|छान्नु (choose)|セン / えら(ぶ)
+実|साँचो, वास्तविक (real)|ジツ / み
+関|सम्बन्ध (relate)|カン / せき
+表|सतह, देखाउनु (surface)|ヒョウ / おもて
+戦|युद्ध (war)|セン / たたか(う)
+最|सबैभन्दा (most)|サイ / もっと(も)
+現|हालको (present)|ゲン / あらわ(れる)
+調|जाँच्नु (investigate)|チョウ / しら(べる)
+化|परिवर्तन (change)|カ / ば(ける)
+首|घाँटी, प्रमुख (neck)|シュ / くび
+法|कानुन (law)|ホウ
+性|स्वभाव, लिङ्ग (nature)|セイ
+的|-सम्बन्धी (-like)|テキ / まと
+制|नियन्त्रण (system)|セイ
+治|निको हुनु (cure)|ジ・チ / なお(る)
+務|कर्तव्य (duty)|ム / つと(める)
+成|बन्नु (become)|セイ / な(る)
+和|शान्ति, जापानी (harmony)|ワ / やわ(らぐ)
+機|मेसिन, अवसर (machine)|キ / はた
+平|समतल (flat)|ヘイ / たい(ら)
+加|थप्नु (add)|カ / くわ(える)
+数|सङ्ख्या (number)|スウ / かず
+点|अङ्क (point)|テン
+球|बल, गोलो (ball)|キュウ / たま
+内|भित्र (inside)|ナイ / うち
+勝|जित्नु (win)|ショウ / か(つ)
+論|तर्क (argument)|ロン
+農|कृषि (farming)|ノウ
+決|निर्णय (decide)|ケツ / き(める)
+投|फाल्नु (throw)|トウ / な(げる)
+支|सहयोग गर्नु (support)|シ / ささ(える)
+検|जाँच (inspect)|ケン
+備|तयारी (prepare)|ビ / そな(える)
+設|स्थापना (establish)|セツ / もう(ける)
+確|पक्का (certain)|カク / たし(か)
+認|मान्नु (recognize)|ニン / みと(める)
+状|अवस्था (condition)|ジョウ
+況|परिस्थिति (situation)|キョウ
+環|वातावरण (ring)|カン
+境|सिमाना (boundary)|キョウ / さかい
+規|नियम (rule)|キ
+則|नियम (law)|ソク
+格|दर्जा (status)|カク
+求|माग्नु (request)|キュウ / もと(める)
+資|साधन, पैसा (resources)|シ
+容|स्वीकार्नु, रूप (contain)|ヨウ
+易|सजिलो (easy)|イ・エキ / やさ(しい)
+難|गाह्रो (difficult)|ナン / むずか(しい)
+価|मूल्य (price)|カ / あたい
+値|मूल्य (value)|チ / ね
+段|तह (step)|ダン
+階|तला (floor)|カイ
+割|भाग लगाउनु (divide)|カツ / わ(る)
+増|बढ्नु (increase)|ゾウ / ふ(える)
+減|घट्नु (decrease)|ゲン / へ(る)
+追|पछ्याउनु (chase)|ツイ / お(う)
+伝|पुर्‍याउनु (convey)|デン / つた(える)
+達|पुग्नु (reach)|タツ
+導|डोर्‍याउनु (guide)|ドウ / みちび(く)
+指|औँला, देखाउनु (finger)|シ / ゆび
+示|देखाउनु (show)|ジ / しめ(す)
+評|मूल्याङ्कन (evaluate)|ヒョウ
+判|निर्णय गर्नु (judge)|ハン
+断|काट्नु, मना गर्नु (cut off)|ダン / ことわ(る)
+予|पहिले (beforehand)|ヨ
+測|नाप्नु (measure)|ソク / はか(る)
+防|रोक्नु (prevent)|ボウ / ふせ(ぐ)
+守|रक्षा गर्नु (protect)|シュ / まも(る)
+破|फुटाउनु (break)|ハ / やぶ(る)
+壊|बिग्रनु (destroy)|カイ / こわ(れる)
+修|सुधार्नु (repair)|シュウ / おさ(める)
+復|फर्कनु (return)|フク
+習|सिक्नु (learn)|シュウ / なら(う)
+練|अभ्यास (practice)|レン / ね(る)
+積|थुपार्नु (accumulate)|セキ / つ(む)
+極|चरम (extreme)|キョク / きわ(める)
+優|राम्रो, दयालु (gentle)|ユウ / やさ(しい)
+秀|उत्कृष्ट (excel)|シュウ
+残|बाँकी (remain)|ザン / のこ(る)
+念|विचार (thought)|ネン
+謝|धन्यवाद, माफी (thank)|シャ / あやま(る)
+罪|अपराध (crime)|ザイ / つみ
+許|अनुमति (permit)|キョ / ゆる(す)
+禁|निषेध (prohibit)|キン
+営|सञ्चालन (manage)|エイ
+済|सकिनु (finish)|サイ / す(む)
+財|सम्पत्ति (wealth)|ザイ
+貿|व्यापार (trade)|ボウ
+輸|ढुवानी (transport)|ユ
+給|दिनु, तलब (salary)|キュウ
+賃|भाडा, पारिश्रमिक (wage)|チン
+貯|जम्मा गर्नु (save)|チョ
+払|तिर्नु (pay)|フツ / はら(う)
+返|फर्काउनु (return)|ヘン / かえ(す)
+戻|फर्कनु (go back)|レイ / もど(る)
+届|पुग्नु, सूचना (deliver)|とど(く)
+招|बोलाउनु (invite)|ショウ / まね(く)
+待|पर्खनु (wait)|タイ / ま(つ)
+訪|भेट्न जानु (visit)|ホウ / たず(ねる)
+案|योजना, विचार (plan)|アン
+紹|चिनाउनु (introduce)|ショウ
+介|बीचमा (mediate)|カイ
+談|कुराकानी (talk)|ダン
+束|बन्डल, वाचा (bundle)|ソク / たば
+希|आशा (hope)|キ
+望|इच्छा (wish)|ボウ / のぞ(む)
+願|प्रार्थना, अनुरोध (request)|ガン / ねが(う)
+夢|सपना (dream)|ム / ゆめ
+努|मेहनत (effort)|ド / つと(める)
+力|बल (strength)|リョク / ちから
+頑|दृढ (stubborn)|ガン
+張|तान्नु (stretch)|チョウ / は(る)
+疲|थाक्नु (tired)|ヒ / つか(れる)
+眠|निन्द्रा (sleep)|ミン / ねむ(る)
+痛|दुख्नु (pain)|ツウ / いた(い)
+熱|ज्वरो, गर्मी (heat)|ネツ / あつ(い)
+咳|खोकी (cough)|ガイ / せき
+症|रोगको लक्षण (symptom)|ショウ
+査|जाँच (investigate)|サ
+診|जाँच गर्नु (examine)|シン / み(る)
+療|उपचार (treat)|リョウ
+健|स्वस्थ (healthy)|ケン / すこ(やか)
+康|शान्ति, स्वास्थ्य (peace)|コウ
+頭|टाउको (head)|トウ・ズ / あたま
+腹|पेट (belly)|フク / はら
+歯|दाँत (tooth)|シ / は
+血|रगत (blood)|ケツ / ち
+汗|पसिना (sweat)|カン / あせ
+背|ढाड (back)|ハイ / せ
+腕|पाखुरा (arm)|ワン / うで
+髪|कपाल (hair)|ハツ / かみ`);
 function setKL(l){KL=l;renderKanji()}
 function renderKanji(){
   var lv=["N5","N4","N3","Visa"],q=$("kq").value.trim().toLowerCase(),h="";
